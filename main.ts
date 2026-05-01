@@ -332,9 +332,6 @@ export default function handler(req, res) {
   return yoga(req, res)
 }
 
-// Start server with Express, CORS, and Helmet
-const app = express()
-
 // Create GraphQL Yoga instance
 const yoga = createYoga({
   schema: createSchema({
