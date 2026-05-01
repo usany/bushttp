@@ -81,10 +81,6 @@ const schema = `
     gyeonggiBusRoute(routeIds: [Int!]!): [GyeonggiRouteResponse]
     busArrival(routeId: Int!): String
   }
-
-  type Mutation {
-    setMessage(message: String!): String
-  }
 `;
 const root = {  
   seoulBusArrival: async (_: any, { routeIds }) => {
@@ -190,27 +186,6 @@ const root = {
   },
 };
 
-export default function handler(req, res) {
-  const yoga = createYoga({
-    schema: createSchema({
-      typeDefs: schema,
-      resolvers: {
-        Query: {
-          ...root,
-        },
-        Mutation: {
-          setMessage: ({ message }) => {
-            return message;
-          }
-        }
-      },
-    }),
-    graphqlEndpoint: '/graphql'
-  })
-
-  return yoga(req, res)
-}
-
 // Create GraphQL Yoga instance
 const yoga = createYoga({
   schema: createSchema({
@@ -219,11 +194,6 @@ const yoga = createYoga({
       Query: {
         ...root,
       },
-      Mutation: {
-        setMessage: ({ message }) => {
-          return message;
-        }
-      }
     },
   }),
   graphqlEndpoint: '/graphql'
