@@ -1,4 +1,4 @@
-## Development
+# Development
 
 Welcome to graphql server for bus application
 
