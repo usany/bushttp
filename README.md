@@ -1,5 +1,7 @@
 ## Development
 
+This is graphql server for busapp
+
 1. khusan - usanapp
 2. http server - usanhttp
 3. websocket server - usanws
