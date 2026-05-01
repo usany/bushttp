@@ -1,8 +1,8 @@
 import { createSchema, createYoga } from 'graphql-yoga'
 import xmlToJson from './xmlToJson.ts'
-import { load } from "@std/dotenv";
+// import { load } from "@std/dotenv";
 // import { load } from "jsr:@std/dotenv";
-const env = await load()
+// const env = await load()
 interface ParsedXmlData {
   [key: string]: any;
   msgBody?: {
@@ -182,7 +182,7 @@ const schema = `
 const root = {  
   seoulBusArrival: async (_: any, { routeIds }) => {
     try {
-      const apiKey = process.env.USERID;
+      const apiKey = Deno.env.get("USERID");
       const results = [];
       
       for (const routeId of routeIds) {
@@ -226,7 +226,7 @@ const root = {
 
   gyeonggiBusArrival: async (_: any, { stationIds }) => {
     try {
-      const apiKey = process.env.USERID;
+      const apiKey = Deno.env.get("USERID");
       const results = [];
       
       for (const stationId of stationIds) {
@@ -256,7 +256,7 @@ const root = {
 
   gyeonggiBusRoute: async (_: any, { routeIds }) => {
     try {
-      const apiKey = process.env.USERID;
+      const apiKey = Deno.env.get("USERID");
       const results = []
       for (const routeId of routeIds) {
         const url = `https://apis.data.go.kr/6410000/busrouteservice/v2/getBusRouteInfoItemv2?serviceKey=${apiKey}&routeId=${routeId}&format=json`;

@@ -1,24 +1,16 @@
 {
   "version": "5",
   "specifiers": {
-    "jsr:@std/assert@1": "1.0.19",
-    "jsr:@std/dotenv@*": "0.225.5",
-    "jsr:@std/dotenv@~0.225.6": "0.225.6",
+    "jsr:@std/assert@1": "1.0.16",
     "jsr:@std/internal@^1.0.12": "1.0.12",
-    "npm:graphql-yoga@^3.7.3": "3.9.1_graphql@16.12.0_@envelop+core@3.0.6"
+    "npm:graphql-yoga@^3.7.3": "3.9.1_graphql@16.13.2_@envelop+core@3.0.6"
   },
   "jsr": {
-    "@std/assert@1.0.19": {
-      "integrity": "eaada96ee120cb980bc47e040f82814d786fe8162ecc53c91d8df60b8755991e",
+    "@std/assert@1.0.16": {
+      "integrity": "6a7272ed1eaa77defe76e5ff63ca705d9c495077e2d5fd0126d2b53fc5bd6532",
       "dependencies": [
         "jsr:@std/internal"
       ]
-    },
-    "@std/dotenv@0.225.5": {
-      "integrity": "9ce6f9d0ec3311f74a32535aa1b8c62ed88b1ab91b7f0815797d77a6f60c922f"
-    },
-    "@std/dotenv@0.225.6": {
-      "integrity": "1d6f9db72f565bd26790fa034c26e45ecb260b5245417be76c2279e5734c421b"
     },
     "@std/internal@1.0.12": {
       "integrity": "972a634fd5bc34b242024402972cd5143eac68d8dffaca5eaa4dba30ce17b027"
@@ -38,7 +30,7 @@
         "tslib"
       ]
     },
-    "@envelop/validation-cache@5.1.3_@envelop+core@3.0.6_graphql@16.12.0": {
+    "@envelop/validation-cache@5.1.3_@envelop+core@3.0.6_graphql@16.13.2": {
       "integrity": "sha512-MkzcScQHJJQ/9YCAPdWShEi3xZv4F4neTs+NszzSrZOdlU8z/THuRt7gZ0sO0y2be+sx+SKjHQP8Gq3VXXcTTg==",
       "dependencies": [
         "@envelop/core",
@@ -48,7 +40,7 @@
         "tslib"
       ]
     },
-    "@graphql-tools/executor@0.0.18_graphql@16.12.0": {
+    "@graphql-tools/executor@0.0.18_graphql@16.13.2": {
       "integrity": "sha512-xZC0C+/npXoSHBB5bsJdwxDLgtl1Gu4fL9J2TPQmXoZC3L2N506KJoppf9LgWdHU/xK04luJrhP6WjhfkIN0pQ==",
       "dependencies": [
         "@graphql-tools/utils",
@@ -59,7 +51,7 @@
         "value-or-promise"
       ]
     },
-    "@graphql-tools/merge@8.4.2_graphql@16.12.0": {
+    "@graphql-tools/merge@8.4.2_graphql@16.13.2": {
       "integrity": "sha512-XbrHAaj8yDuINph+sAfuq3QCZ/tKblrTLOpirK0+CAgNlZUCHs0Fa+xtMUURgwCVThLle1AF7svJCxFizygLsw==",
       "dependencies": [
         "@graphql-tools/utils",
@@ -67,7 +59,7 @@
         "tslib"
       ]
     },
-    "@graphql-tools/schema@9.0.19_graphql@16.12.0": {
+    "@graphql-tools/schema@9.0.19_graphql@16.13.2": {
       "integrity": "sha512-oBRPoNBtCkk0zbUsyP4GaIzCt8C0aCI4ycIRUL67KK5pOHljKLBBtGT+Jr6hkzA74C8Gco8bpZPe7aWFjiaK2w==",
       "dependencies": [
         "@graphql-tools/merge",
@@ -77,7 +69,7 @@
         "value-or-promise"
       ]
     },
-    "@graphql-tools/utils@9.2.1_graphql@16.12.0": {
+    "@graphql-tools/utils@9.2.1_graphql@16.13.2": {
       "integrity": "sha512-WUw506Ql6xzmOORlriNrD6Ugx+HjVgYxt9KCXD9mHAak+eaXSwuGGPyE60hy9xaDEoXKBsG7SkG69ybitaVl6A==",
       "dependencies": [
         "@graphql-typed-document-node/core",
@@ -85,7 +77,7 @@
         "tslib"
       ]
     },
-    "@graphql-typed-document-node/core@3.2.0_graphql@16.12.0": {
+    "@graphql-typed-document-node/core@3.2.0_graphql@16.13.2": {
       "integrity": "sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==",
       "dependencies": [
         "graphql"
@@ -113,11 +105,11 @@
         "tslib"
       ]
     },
-    "@peculiar/asn1-schema@2.6.0": {
-      "integrity": "sha512-xNLYLBFTBKkCzEZIw842BxytQQATQv+lDTCEMZ8C196iJcJJMBUZxrhSTxLaohMyKK8QlzRNTRkUmanucnDSqg==",
+    "@peculiar/asn1-schema@2.7.0": {
+      "integrity": "sha512-W8ZfWzLmQnrcky+eh3tni4IozMdqBDiHWU0N+vve/UGjMaUs8c0L7A2oEdkBXS8rTpWDpK/aoI3DG/L/hxmxPg==",
       "dependencies": [
+        "@peculiar/utils",
         "asn1js",
-        "pvtsutils",
         "tslib"
       ]
     },
@@ -127,12 +119,18 @@
         "tslib"
       ]
     },
-    "@peculiar/webcrypto@1.5.0": {
-      "integrity": "sha512-BRs5XUAwiyCDQMsVA9IDvDa7UBR9gAvPHgugOeGng3YN6vJ9JYonyDc0lNczErgtCWtucjR5N7VtaonboD/ezg==",
+    "@peculiar/utils@2.0.3": {
+      "integrity": "sha512-+oL3HPFRIZ1St2K50lWCXiioIgSoxzz7R1J3uF6neO2yl1sgmpgY6XXJH4BdpoDkMWznQTeYF6oWNDZLCdQ4eQ==",
+      "dependencies": [
+        "tslib"
+      ]
+    },
+    "@peculiar/webcrypto@1.7.1": {
+      "integrity": "sha512-ODOov0sGMJMf3jPonOkgGqPknTsu+DdQ7kD++gz8aI+aFMOMHFbWAA2taqXXVTdP+OTOQR/znGvSpmkeI0WTYQ==",
       "dependencies": [
         "@peculiar/asn1-schema",
         "@peculiar/json-schema",
-        "pvtsutils",
+        "@peculiar/utils",
         "tslib",
         "webcrypto-core"
       ]
@@ -173,8 +171,8 @@
         "tslib"
       ]
     },
-    "asn1js@3.0.7": {
-      "integrity": "sha512-uLvq6KJu04qoQM6gvBfKFjlh6Gl0vOKQuR5cJMDHQkmwfMOQeN3F3SHCv9SNYSL+CRoHvOGFfllDlVz03GQjvQ==",
+    "asn1js@3.0.10": {
+      "integrity": "sha512-S2s3aOytiKdFRdulw2qPE51MzjzVOisppcVv7jVFR+Kw0kxwvFrDcYA0h7Ndqbmj0HkMIXYWaoj7fli8kgx1eg==",
       "dependencies": [
         "pvtsutils",
         "pvutils",
@@ -205,7 +203,7 @@
         "punycode"
       ]
     },
-    "graphql-yoga@3.9.1_graphql@16.12.0_@envelop+core@3.0.6": {
+    "graphql-yoga@3.9.1_graphql@16.13.2_@envelop+core@3.0.6": {
       "integrity": "sha512-BB6EkN64VBTXWmf9Kym2OsVZFzBC0mAsQNo9eNB5xIr3t+x7qepQ34xW5A353NWol3Js3xpzxwIKFVF6l9VsPg==",
       "dependencies": [
         "@envelop/core",
@@ -223,8 +221,8 @@
         "tslib"
       ]
     },
-    "graphql@16.12.0": {
-      "integrity": "sha512-DKKrynuQRne0PNpEbzuEdHlYOMksHSUI8Zc9Unei5gTsMNA2/vMpoMz/yKba50pejK56qj98qM0SjYxAKi13gQ=="
+    "graphql@16.13.2": {
+      "integrity": "sha512-5bJ+nf/UCpAjHM8i06fl7eLyVC9iuNAjm9qzkiu2ZGhM0VscSvS6WDPfAwkdkBuoXGM9FJSbKl6wylMwP9Ktig=="
     },
     "hash-it@6.0.1": {
       "integrity": "sha512-qhl8+l4Zwi1eLlL3lja5ywmDQnBzLEJxd0QJoAVIgZpgQbdtVZrN5ypB0y3VHwBlvAalpcbM2/A6x7oUks5zNg=="
@@ -265,13 +263,13 @@
     "web-streams-polyfill@3.3.3": {
       "integrity": "sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw=="
     },
-    "webcrypto-core@1.8.1": {
-      "integrity": "sha512-P+x1MvlNCXlKbLSOY4cYrdreqPG5hbzkmawbcXLKN/mf6DZW0SdNNkZ+sjwsqVkI4A4Ko2sPZmkZtCKY58w83A==",
+    "webcrypto-core@1.9.2": {
+      "integrity": "sha512-gsXecm82UQNlTBURJGuqOWy1Ww08S3kZUcr3aOJS02Pk0xLtkfeUAVC0u0xhgdonFme80edSJUIJyuvL/7250Q==",
       "dependencies": [
         "@peculiar/asn1-schema",
         "@peculiar/json-schema",
+        "@peculiar/utils",
         "asn1js",
-        "pvtsutils",
         "tslib"
       ]
     },
@@ -282,7 +280,6 @@
   "workspace": {
     "dependencies": [
       "jsr:@std/assert@1",
-      "jsr:@std/dotenv@~0.225.6",
       "npm:graphql-yoga@^3.7.3"
     ]
   }
