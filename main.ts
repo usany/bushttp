@@ -190,9 +190,7 @@ const yoga = createYoga({
   schema: createSchema({
     typeDefs: schema,
     resolvers: {
-      Query: {
-        ...root,
-      },
+      Query: root,
     },
   }),
   graphqlEndpoint: '/graphql'
