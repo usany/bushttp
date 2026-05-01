@@ -1,6 +1,6 @@
 ## Development
 
-Welcome to graphql server for busapp
+Welcome to graphql server for bus application
 
 1. khusan - usanapp
 2. http server - usanhttp
