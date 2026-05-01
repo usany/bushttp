@@ -2,20 +2,6 @@ import { createSchema, createYoga } from 'graphql-yoga'
 import xmlToJson from './xmlToJson.ts'
 
 const schema = `    
-  type GyeonggiBusRouteInfo {
-    routeName: String
-    upFirstTime: String
-    upLastTime: String
-    peekAlloc: String
-    nPeekAlloc: String
-    satPeekAlloc: String
-    satNPeekAlloc: String
-    sunPeekAlloc: String
-    sunNPeekAlloc: String
-    wePeekAlloc: String
-    weNPeekAlloc: String
-  }
-
   type SeoulBusResponse {
     response: SeoulResponse
   }
@@ -75,14 +61,14 @@ const schema = `
 
   type Query {
     hello: String
+    busArrival(routeId: Int!): String
     seoulBusArrival(routeIds: [Int!]!): [SeoulBusResponse]
     gyeonggiBusArrival(stationIds: [Int!]!): [GyeonggiBusResponse]
     gyeonggiBusRoute(routeIds: [Int!]!): [GyeonggiRouteResponse]
-    busArrival(routeId: Int!): String
   }
 `;
 const root = {  
-  seoulBusArrival: async (_: any, { routeIds }) => {
+  seoulBusArrival: async (_: any, { routeIds }: { routeIds: string[] }) => {
     try {
       const apiKey = Deno.env.get("USERID");
       const results = [];
@@ -126,7 +112,7 @@ const root = {
     }
   },
 
-  gyeonggiBusArrival: async (_: any, { stationIds }) => {
+  gyeonggiBusArrival: async (_: any, { stationIds }: { stationIds: string[] }) => {
     try {
       const apiKey = Deno.env.get("USERID");
       const results = [];
@@ -156,7 +142,7 @@ const root = {
     }
   },
 
-  gyeonggiBusRoute: async (_: any, { routeIds }) => {
+  gyeonggiBusRoute: async (_: any, { routeIds }: { routeIds: string[] }) => {
     try {
       const apiKey = Deno.env.get("USERID");
       const results = []
