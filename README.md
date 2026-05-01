@@ -1,6 +1,7 @@
 # Development
 
 Welcome to graphql server for KHUBUS
+![KHUBUS](./assets/structures.png)
 
 ## Platform Series
 1. khusan - usanapp
