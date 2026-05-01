@@ -1,6 +1,6 @@
 # Development
 
-Welcome to graphql server for bus application
+Welcome to graphql server for khubus
 
 1. khusan - usanapp
 2. http server - usanhttp
