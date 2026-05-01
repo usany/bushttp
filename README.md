@@ -1,6 +1,7 @@
 # Development
 
-Welcome to graphql server for khubus
+Welcome to graphql server for KHUBUS
+This is number six in the platform series
 
 1. khusan - usanapp
 2. http server - usanhttp
