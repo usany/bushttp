@@ -280,6 +280,7 @@
   "workspace": {
     "dependencies": [
       "jsr:@std/assert@1",
+      "jsr:@std/expect@1",
       "npm:graphql-yoga@^3.7.3"
     ]
   }
