@@ -16,8 +16,8 @@ interface ParsedXmlData {
 
 export default function xmlToJson(xmlString: string): ParsedXmlData {
   // Simple XML to JSON parser using regex and string manipulation
-  function parseElement(xml) {
-    const result = {};
+  function parseElement(xml: string): any {
+    const result: { [key: string]: any } = {};
 
     // Remove XML declaration and comments
     xml = xml.replace(/<\?xml[^>]*\?>/g, "").replace(/<!--[\s\S]*?-->/g, "");
@@ -31,7 +31,7 @@ export default function xmlToJson(xmlString: string): ParsedXmlData {
 
     // Parse attributes
     if (attributes.trim()) {
-      const attrs = {};
+      const attrs: { [key: string]: string } = {};
       const attrRegex = /(\w+)="([^"]*)"/g;
       let match;
       while ((match = attrRegex.exec(attributes)) !== null) {
@@ -56,7 +56,7 @@ export default function xmlToJson(xmlString: string): ParsedXmlData {
     // Check if content contains child elements
     if (content.includes("<")) {
       // Parse child elements
-      const childElements = {};
+      const childElements: { [key: string]: any } = {};
       const tagRegex = /<(\w+)([^>]*?)>([\s\S]*?)<\/\1>/g;
       let match;
 
