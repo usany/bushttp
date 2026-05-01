@@ -73,7 +73,6 @@ const schema = `
     weNPeekAlloc: String
   }
 
-
   type Query {
     hello: String
     seoulBusArrival(routeIds: [Int!]!): [SeoulBusResponse]
