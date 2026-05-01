@@ -1,10 +1,8 @@
-import cors from 'cors'
-import dotenv from 'dotenv'
-import express from 'express'
 import { createSchema, createYoga } from 'graphql-yoga'
-import helmet from 'helmet'
-
-dotenv.config()
+import xmlToJson from './xmlToJson.ts'
+import { load } from "@std/dotenv";
+// import { load } from "jsr:@std/dotenv";
+const env = await load()
 interface ParsedXmlData {
   [key: string]: any;
   msgBody?: {
@@ -354,56 +352,10 @@ const yoga = createYoga({
   }),
   graphqlEndpoint: '/graphql'
 })
-
-const yogaRouter = express.Router()
-
-// GraphiQL specific CSP configuration
-yogaRouter.use(
-  helmet({
-    contentSecurityPolicy: {
-      directives: {
-        'style-src': ["'self'", 'unpkg.com'],
-        'script-src': ["'self'", 'unpkg.com', "'unsafe-inline'"],
-        'img-src': ["'self'", 'raw.githubusercontent.com']
-      }
-    }
-  })
-)
-const corsOptions = {
-	// origin: '*',
-	// origin: 'http://localhost:5173',
-	// origin: 'https://usany.github.io',
-	// origin: 'https://usany-github-io.vercel.app',
-	// origin: 'https://khusan.co.kr',
-	origin: [
-		"http://localhost:8081",
-	],
-	optionsSuccessStatus: 200,
-};
-
-yogaRouter.use(cors(corsOptions))
-
-yogaRouter.use(yoga)
-
-// By adding the GraphQL Yoga router before the global helmet middleware,
-// you can be sure that the global CSP configuration will not be applied to the GraphQL Yoga endpoint
-app.use(yoga.graphqlEndpoint, yogaRouter)
-
-// Add the global CSP configuration for the rest of your server
-app.use(helmet())
-
-app.use(cors(corsOptions))
-
-// Add a root route to fix "Cannot GET /" error
-app.get('/', (req, res) => {
-  res.send('GraphQL Server is running! Visit /graphql for the GraphQL playground.')
-})
-app.get('/graphql', (req, res) => {
-  console.log(req)
-})
-
-const port = process.env.PORT || 5000
-
-app.listen(port, "0.0.0.0", () => {
-  console.log(`Running a GraphQL API server at http://localhost:${port}/graphql`)
-})
+ 
+Deno.serve({
+  port: 5000,
+  onListen({ hostname, port }) {
+    console.log(`Listening on http://${hostname}:${port}/${yoga.graphqlEndpoint}`)
+  }
+}, yoga)
