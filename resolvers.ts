@@ -5,7 +5,6 @@ export const resolvers = {
     try {
       const apiKey = Deno.env.get("USERID");
       const results = [];
-      
       for (const routeId of routeIds) {
         const url = `http://ws.bus.go.kr/api/rest/arrive/getArrInfoByRouteAll?serviceKey=${apiKey}&busRouteId=${routeId}`;
         const response = await fetch(url);
