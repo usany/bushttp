@@ -15,13 +15,14 @@ export const resolvers = {
             msgBody: {
               itemList: jsonData.msgBody?.itemList?.map(item => {
                 return ({
-                arrmsg1: item.arrmsg1 || '',
-                rtNm: item.rtNm || '',
-                firstTm: item.firstTm || '',
-                lastTm: item.lastTm || '',
-                term: item.term || '',
-                stNm: item.stNm || ''
-              })}) || []
+                  arrmsg1: item.arrmsg1 || '',
+                  rtNm: item.rtNm || '',
+                  firstTm: item.firstTm || '',
+                  lastTm: item.lastTm || '',
+                  term: item.term || '',
+                  stNm: item.stNm || ''
+                })
+              }) || []
             }
           }
         });
