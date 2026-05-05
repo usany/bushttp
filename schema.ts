@@ -57,8 +57,6 @@ export const schema = `
   }
 
   type Query {
-    hello: String
-    busArrival(routeId: Int!): String
     seoulBusArrival(routeIds: [Int!]!): [SeoulBusResponse]
     gyeonggiBusArrival(stationIds: [Int!]!): [GyeonggiBusResponse]
     gyeonggiBusRoute(routeIds: [Int!]!): [GyeonggiRouteResponse]
