@@ -89,17 +89,18 @@ export const resolvers = {
       return results
     } catch (error) {
       console.error('Error fetching Gyeonggi bus route data:', error);
-      return {
-        response: {
-          msgHeader: {
-            resultCode: 'ERROR',
-            resultMsg: 'Error fetching Gyeonggi bus route data'
-          },
-          msgBody: {
-            busRouteInfoItem: []
-          }
-        }
-      };
+      // return {
+      //   response: {
+      //     msgHeader: {
+      //       resultCode: 'ERROR',
+      //       resultMsg: 'Error fetching Gyeonggi bus route data'
+      //     },
+      //     msgBody: {
+      //       busRouteInfoItem: []
+      //     }
+      //   }
+      // };
+      throw new Error('Error fetching Gyeonggi bus route data');
     }
   },
 };

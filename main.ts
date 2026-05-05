@@ -1,21 +1,23 @@
-import { createSchema, createYoga } from 'graphql-yoga'
-import { schema } from './schema.ts'
-import { resolvers } from './resolvers.ts'
+import { createSchema, createYoga } from "graphql-yoga";
+import { schema } from "./schema.ts";
+import { resolvers } from "./resolvers.ts";
 
 // Create GraphQL Yoga instance
-const yoga = createYoga({
+export const yoga = createYoga({
   schema: createSchema({
     typeDefs: schema,
     resolvers: {
       Query: resolvers,
     },
   }),
-  graphqlEndpoint: '/graphql'
-})
- 
+  graphqlEndpoint: "/graphql",
+});
+
 Deno.serve({
   port: 5000,
   onListen({ hostname, port }) {
-    console.log(`Listening on http://${hostname}:${port}${yoga.graphqlEndpoint}`)
-  }
-}, yoga)
+    console.log(
+      `Listening on http://${hostname}:${port}${yoga.graphqlEndpoint}`,
+    );
+  },
+}, yoga);
