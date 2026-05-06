@@ -19,11 +19,14 @@ jobs:
       with:
         deno-version: v1.x
         
+    - name: Generate lock file
+      run: deno install --lock=deno.lock main.ts main.test.ts
+      
     - name: Cache dependencies
       run: deno cache --lock=deno.lock main.ts main.test.ts
       
     - name: Run tests
-      run: deno test --allow-net --allow-env --allow-read --allow-run --env-file
+      run: deno test --allow-net --allow-env --allow-read --allow-run main.test.ts
       
     - name: Check formatting
       run: deno fmt --check
