@@ -19,9 +19,6 @@ jobs:
       with:
         deno-version: v1.x
         
-    - name: Generate lock file
-      run: deno install --lock=deno.lock main.ts main.test.ts
-      
     - name: Cache dependencies
       run: deno cache --lock=deno.lock main.ts main.test.ts
       
