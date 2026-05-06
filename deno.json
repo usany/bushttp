@@ -2,7 +2,9 @@
   "tasks": {
     "dev": "deno run --watch --allow-net --allow-env --allow-read --allow-run --env-file main.ts",
     "test": "deno test --allow-net --allow-env --allow-read --allow-run --env-file main.test.ts",
-    "lintformat": "deno lint; deno fmt"
+    "lintformat": "deno lint; deno fmt",
+    "lint": "deno lint",
+    "fmt": "deno fmt"
   },
   "imports": {
     "@std/expect": "jsr:@std/expect@1",
