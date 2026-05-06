@@ -20,7 +20,7 @@ jobs:
         deno-version: v2.x
               
     - name: Run tests
-      run: deno test --allow-net --allow-env --allow-read --allow-run main.test.ts
+      run: deno test --allow-net --allow-env --allow-read --allow-run --env-file main.test.ts
       
     - name: Check formatting
       run: deno fmt --check
