@@ -9,6 +9,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      USERID: ${{ secrets.USERID }}
     
     steps:
     - name: Checkout repository
