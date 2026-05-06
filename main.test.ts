@@ -2,6 +2,7 @@ import { assertEquals } from "@std/assert";
 import { yoga } from "./main.ts";
 
 const testingIds = {seoulBusArrival: 100000025, gyeonggiBusArrival: 222000665, gyeonggiBusRoute: 241348002};
+
 Deno.test("SeoulBusArrival query", async () => {
   const query = `
     query {
