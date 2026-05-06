@@ -12,7 +12,6 @@ export const yoga = createYoga({
   }),
   graphqlEndpoint: "/graphql",
 });
-
 Deno.serve({
   port: 5000,
   onListen({ hostname, port }) {
