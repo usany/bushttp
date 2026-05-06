@@ -7,7 +7,7 @@ on:
     branches: [ main, bravo, charlie ]
 
 jobs:
-  tests:
+  graphql:
     runs-on: ubuntu-latest
     env:
       USERID: ${{ secrets.USERID }}
