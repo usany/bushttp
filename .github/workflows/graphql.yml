@@ -7,7 +7,7 @@ on:
     branches: [ main, bravo, charlie ]
 
 jobs:
-  test:
+  tests:
     runs-on: ubuntu-latest
     env:
       USERID: ${{ secrets.USERID }}
